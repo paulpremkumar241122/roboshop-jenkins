@@ -1,4 +1,9 @@
-- name: Pipeline Setup for App Components
+- name: Single branch Pipeline Setup for App Components
   ansible.builtin.include_tasks:
-    file: jobs.yml
-  loop: "{{ jobs }}"
+    file: sp_jobs.yml
+  loop: "{{ sp_jobs }}"
+
+- name: Multi branch Pipeline Setup for App Components
+  ansible.builtin.include_tasks:
+    file: mp_jobs.yml
+  loop: "{{ mp_jobs }}"
